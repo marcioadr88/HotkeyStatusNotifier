@@ -28,4 +28,4 @@ jobs:
       - name: Create GitHub Release and upload exe
         env:
           GH_TOKEN: ${{ github.token }}
-        run: gh release create "$env:GITHUB_REF_NAME" publish/win-x64/HotkeyStatusNotifier.exe --generate-notes
+        run: 'gh release create "$env:GITHUB_REF_NAME" publish/win-x64/HotkeyStatusNotifier.exe --notes "Requires the .NET 8 Desktop Runtime (x64); the .NET SDK is not needed. Install it: https://dotnet.microsoft.com/download/dotnet/8.0" --generate-notes'
