@@ -1,0 +1,63 @@
+<Window x:Class="HotkeyStatusNotifier.UI.SettingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="HotkeyStatusNotifier - Settings"
+        Width="380"
+        SizeToContent="Height"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        ShowInTaskbar="True">
+    <StackPanel Margin="16">
+        <TextBlock Text="Hotkey" FontWeight="SemiBold"/>
+        <TextBox x:Name="HotkeyBox" Margin="0,4,0,0" IsReadOnly="True"
+                 Text="Click here and press the combination"
+                 PreviewKeyDown="HotkeyBox_PreviewKeyDown"/>
+        <TextBlock Margin="0,2,0,0" FontSize="11" Foreground="Gray"
+                   Text="Click the field and press the combination (e.g. Ctrl+Alt+M). Esc cancels. You can also type it (e.g. Ctrl+Alt+M) and press Enter."/>
+        <TextBlock TextWrapping="Wrap" Margin="0,2,0,0" FontSize="11" Foreground="#C06000"
+                   Text="At least one modifier (Ctrl/Alt/Shift/Win) is required. Win-only combinations may be captured by Windows."/>
+
+        <CheckBox x:Name="SoundEnabledBox" Margin="0,12,0,0" Content="Sound enabled"/>
+        <TextBlock Margin="0,8,0,0" Text="Volume"/>
+        <Slider x:Name="VolumeSlider" Minimum="0" Maximum="100" Margin="0,2,0,0"/>
+
+        <CheckBox x:Name="VisualEnabledBox" Margin="0,12,0,0" Content="Visual notification (brief)"/>
+        <CheckBox x:Name="PersistentIndicatorBox" Margin="0,8,0,0"
+                  Content="Always-visible indicator (replaces the brief notification)"/>
+        <CheckBox x:Name="ControlMicBox" Margin="0,8,0,0"
+                  Content="Control microphone (mutes the actual input device)"/>
+        <TextBlock Margin="0,8,0,0" Text="Notification duration (ms)"/>
+        <TextBox x:Name="DurationBox" Width="90" HorizontalAlignment="Left" Margin="0,2,0,0"/>
+
+        <TextBlock Margin="0,8,0,0" Text="Indicator position"/>
+        <ComboBox x:Name="PositionCombo" Width="140" HorizontalAlignment="Left" Margin="0,2,0,0">
+            <ComboBoxItem Content="Bottom right"/>
+            <ComboBoxItem Content="Bottom left"/>
+            <ComboBoxItem Content="Top right"/>
+            <ComboBoxItem Content="Top left"/>
+            <ComboBoxItem Content="Center right"/>
+            <ComboBoxItem Content="Center left"/>
+        </ComboBox>
+
+        <TextBlock Margin="0,8,0,0" Text="Indicator size"/>
+        <ComboBox x:Name="IndicatorSizeCombo" Width="140" HorizontalAlignment="Left" Margin="0,2,0,0">
+            <ComboBoxItem Content="Large"/>
+            <ComboBoxItem Content="Medium"/>
+            <ComboBoxItem Content="Small"/>
+        </ComboBox>
+
+        <TextBlock Margin="0,8,0,0" Text="Indicator margin from edge (px, negative = overlap)"/>
+        <Slider x:Name="MarginSlider" Minimum="-40" Maximum="40" TickFrequency="4" Margin="0,2,0,0"/>
+
+        <TextBlock Margin="0,8,0,0" Text="Start with state"/>
+        <ComboBox x:Name="InitialStateCombo" Width="140" HorizontalAlignment="Left" Margin="0,2,0,0">
+            <ComboBoxItem Content="Unmuted"/>
+            <ComboBoxItem Content="Muted"/>
+        </ComboBox>
+
+        <CheckBox x:Name="StartWithWindowsBox" Margin="0,12,0,0" Content="Start with Windows"/>
+
+        <Button x:Name="CloseButton" Content="Close" Width="90" Height="28"
+                HorizontalAlignment="Right" Margin="0,16,0,0" Click="CloseButton_Click"/>
+    </StackPanel>
+</Window>
