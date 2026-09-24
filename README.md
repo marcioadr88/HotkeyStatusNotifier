@@ -8,6 +8,16 @@ It is **not** tied to any game or application. It does not read game memory,
 inject DLLs, send keys, or consume the hotkey — the key combination still
 reaches the app that has focus (e.g. a game's push-to-talk toggle).
 
+## Download
+
+Grab the latest release from
+[GitHub Releases](https://github.com/marcioadr88/HotkeyStatusNotifier/releases/latest).
+
+The release download (`HotkeyStatusNotifier.exe`) is a compact,
+**framework-dependent** build: it needs the **.NET 8 Desktop Runtime (x64)**
+installed on the target PC — the SDK is **not** required to run it. See
+[INSTALL.md](INSTALL.md) for the runtime download link and setup.
+
 ## What it does
 
 - Observes a global hotkey without blocking it (Windows **Raw Input**).
@@ -45,8 +55,9 @@ reaches the app that has focus (e.g. a game's push-to-talk toggle).
 
 ## Build (short version)
 
-Requires .NET 8 SDK on Windows 11. See `INSTALL.md` for details and the
-self-contained (no-runtime) option.
+Requires .NET 8 SDK on Windows 11 (end users don't need the SDK — download the
+release exe instead). See `INSTALL.md` for details and the self-contained
+(no-runtime) option.
 
 ```
 dotnet build

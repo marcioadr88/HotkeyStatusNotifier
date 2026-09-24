@@ -1,10 +1,25 @@
 # Installation
 
+## Download a release (recommended)
+
+1. Download `HotkeyStatusNotifier.exe` from the
+   [latest release](https://github.com/marcioadr88/HotkeyStatusNotifier/releases/latest)
+   (see the **Assets** section of the release page).
+2. Install the **.NET 8 Desktop Runtime (x64)** on the PC where you want to
+   run the app: https://dotnet.microsoft.com/download/dotnet/8.0 — run the
+   downloaded installer with the default options. The release exe is a
+   compact, **framework-dependent** build: the runtime is required, the
+   **.NET SDK is not** needed to run it.
+3. Double-click `HotkeyStatusNotifier.exe`. A tray icon appears (green mic =
+   Unmuted). Press `Ctrl+Alt+M` to test the toggle. See
+   [First run](#first-run) below.
+
 ## Requirements
 
 - Windows 11
-- **.NET 8 SDK** to build (or .NET 8 Desktop Runtime to run a prebuilt
-  framework-dependent build). Download from https://dotnet.microsoft.com/download
+- **.NET 8 Desktop Runtime (x64)** to run the release exe (framework-dependent)
+  — https://dotnet.microsoft.com/download/dotnet/8.0
+- **.NET 8 SDK** to build from source (developer machines only)
 - No other dependencies. No NuGet packages.
 
 ## Build (developer machine)
@@ -20,9 +35,10 @@ Build a release build with `dotnet build -c Release`.
 
 ## Option A — framework-dependent (needs runtime on target PC)
 
-The target PC needs the **.NET 8 Desktop Runtime** installed
+The target PC needs the **.NET 8 Desktop Runtime (x64)** installed
 (https://dotnet.microsoft.com/download/dotnet/8.0). Copy the whole output
-folder and run the exe.
+folder and run the exe. (The GitHub Release exe is this kind of build — a
+single-file, framework-dependent exe.)
 
 ## Option B — self-contained single file (no runtime needed)
 
